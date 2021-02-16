@@ -5,6 +5,7 @@ import MessageForm from './MessageForm';
 
 export default class ChatPage extends Component {
   state = {
+    user: 'nachofool',
     messages: [
       { user: 'tacoman2000', msg: 'I love tacos' },
       { user: 'burritobae', msg: 'I also enjoy tacos' }

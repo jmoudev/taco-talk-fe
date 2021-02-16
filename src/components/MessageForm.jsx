@@ -1,19 +1,23 @@
 import React, { PureComponent } from 'react';
 
 class MessageForm extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
+  handleSend = (event) => {
+    event.preventDefault();
+    // if (input.value) {
+    //   socket.emit('chat apricot', input.value);
+    //   input.value = '';
+    // }
+  };
 
   render() {
     return (
       <div className='messageForm'>
         <h3>Submit Message</h3>
         <form id='form' action=''>
-          <input id='input' autoComplete='off' />
-          <button>Send</button>
+          <label id='input' autoComplete='off'>
+            <textarea></textarea>
+          </label>
+          <button onClick={this.handleSend}>Send</button>
         </form>
       </div>
     );
