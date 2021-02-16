@@ -22,10 +22,7 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "hooks": {
-      "precommit": "eslint . --fix"
-    }
+    ]
   },
   "browserslist": {
     "production": [
@@ -38,5 +35,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^5.0.9"
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "eslint . --fix"
+    }
   }
 }
