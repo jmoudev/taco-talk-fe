@@ -4,11 +4,18 @@ import OnlineUsers from './OnlineUsers';
 import MessageForm from './MessageForm';
 
 export default class ChatPage extends Component {
+  state = {
+    messages: [
+      { user: 'tacoman2000', msg: 'I love tacos' },
+      { user: 'burritobae', msg: 'I also enjoy tacos' }
+    ]
+  };
+
   render() {
     return (
       <div>
         <h2>Chat Page</h2>
-        <Messages />
+        <Messages messages={this.state.messages} />
         <MessageForm />
         <OnlineUsers />
       </div>

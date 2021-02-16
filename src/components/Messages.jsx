@@ -1,17 +1,16 @@
 import React, { PureComponent } from 'react';
 
 class Messages extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
   render() {
+    const msgArr = this.props.messages;
     return (
       <div className='messagesWrapper'>
         <h3>Messages</h3>
-        <ul id='messages'></ul>
+        <ul id='messages'>
+          {msgArr.map((msg) => {
+            return <li>{`${msg.user} : ${msg.msg}`}</li>;
+          })}
+        </ul>
       </div>
     );
   }
