@@ -4,5 +4,17 @@
 }
 
 .title {
-  border: 2px solid rgb(150, 150, 4);
+  border: 5px solid rgb(150, 150, 4);
+}
+
+.messagesWrapper {
+  border: 5px solid green;
+}
+
+.onlineUsers {
+  border: 5px solid red;
+}
+
+.messageForm {
+  border: 5px solid blue;
 }
