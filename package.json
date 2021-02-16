@@ -22,7 +22,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "hooks": {
+      "precommit": "eslint . --fix"
+    }
   },
   "browserslist": {
     "production": [
