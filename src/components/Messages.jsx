@@ -7,8 +7,8 @@ class Messages extends PureComponent {
       <div className='messagesWrapper'>
         <h3>Messages</h3>
         <ul id='messages'>
-          {msgArr.map((msg) => {
-            return <li>{`${msg.user} : ${msg.msg}`}</li>;
+          {msgArr.map((msg, index) => {
+            return <li key={`taco${index}`}>{`${msg.user} : ${msg.msg}`}</li>;
           })}
         </ul>
       </div>
