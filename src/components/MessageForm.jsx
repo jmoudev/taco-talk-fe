@@ -5,7 +5,6 @@ const socket = io.connect('http://localhost:8080');
 
 class MessageForm extends PureComponent {
   state = {
-    message: '',
     data: {
       username: '',
       icon: '',
@@ -13,32 +12,36 @@ class MessageForm extends PureComponent {
     }
   };
 
-  handleSend = event => {
+  handleSend = (event) => {
     event.preventDefault();
-    console.log(event.target.value);
+    console.log(this.state.data.text);
     if (this.state.data.text) {
       socket.emit('chat', {
         username: 'joe',
         icon: 'url',
-        message: 'tacos are great'
+        message: this.state.data.text
       });
       this.setState({ data: { text: '' } });
     }
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
+    console.log(event.target.value);
     this.setState({ data: { text: event.target.value } });
   };
 
   render() {
     return (
-      <div className="messageForm">
+      <div className='messageForm'>
         <h3>Submit Message</h3>
-        <form id="form" action="">
-          <label onChange={this.handleChange} id="input" autoComplete="off">
-            <textarea></textarea>
+        <form id='form' action='' onSubmit={this.handleSend}>
+          <label id='input' autoComplete='off'>
+            <textarea
+              value={this.state.data.text}
+              onChange={this.handleChange}
+            ></textarea>
           </label>
-          <button onClick={this.handleSend}>Send</button>
+          <button type='submit'>Send</button>
         </form>
       </div>
     );
